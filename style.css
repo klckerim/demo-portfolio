@@ -2,15 +2,45 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
-  
+
+  html {
+  scroll-behavior: smooth;
+  }
+
   /* Navigation Bar */
   #home {
-    background-color:  #c1e1f6;
-    padding: 2cm 0;
-    margin: -1cm;
-    height: 5mm;
+  background-color:  #c1e1f6;
+  margin: 0;
+  padding: 1.5rem 2rem;
+  }
+
+  /* Başta gizli */
+  #menu-toggle {
+    display: none;
+    background: none;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
   }
   
+  /* Küçük ekranlarda görünür */
+  @media (max-width: 768px) {
+    #menu-toggle {
+      display: block;
+    }
+  
+    .topdiv {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .topdiv.show {
+      display: flex;
+    }
+  }
+
+
   .topmenu {
     color: #7600bc;
     margin: 10px;
@@ -23,29 +53,47 @@ body {
     font-weight: bolder;
     text-decoration: underline;
   }
-  .topdiv {
-    float: right;
-    padding-right: 1cm;
-  }
+  
   .profile_name {
     color: #7600bc;
+    float: none;
+    padding-left: 1rem;
     font-size: 30px;
-    float: left;
-    padding-left: 2cm;
-  }
-  .profile_name .contact_info {
-    font-size: 15px;
-    font-style: italic;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-  }
-  .contact_info img {
-    width: 25px;
-    margin-right: 10px;
-    float: left;
   }
   
+    .profile_name .contact_info {
+      font-size: 15px;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+    .contact_info img {
+      width: 25px;
+      margin-right: 10px;
+      float: left;
+    }
+
+    nav > div#home {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .topdiv {
+    display: flex;
+    gap: 1rem;
+    order: 2;
+    flex-wrap: wrap;
+  }
+
+  .profile_name {
+    order: 1;
+    flex: 1 1 auto;
+  }
+
   /* Titles */
   h2 {
     text-align: center;
@@ -88,13 +136,15 @@ body {
     display: flex;
     flex-wrap: wrap;
   }
+ 
   .skill {
     border: 1px solid gray;
     border-radius: 6px;
     text-align: center;
-    margin: 50px;
-    padding: 10px;
-    width: 2in;
+    margin: 2rem;
+    padding: 1rem;  
+    width: calc(100%/2 - 4rem);
+    max-width: 300px;
     font-size: 20px;
     box-shadow: 0 3px 10px gray;
   }
@@ -116,19 +166,56 @@ body {
     align-items: center;
     justify-content: center;
   }
-  
-  /* Projects */
+
+  /* Mobile */
+  @media (max-width: 600px) {
+  nav > div#home {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topdiv {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .profile_name {
+    padding-left: 0;
+  }
+}
+
+
+ /* Tablet and up */
+ @media (min-width: 768px) {
+   .projects-container {
+     display: flex;
+     flex-wrap: wrap;
+   }
+   .project-card {
+     width: calc(50% - 2rem);
+     margin: 1rem;
+   }
+ }
+
+ /* Desktop */
+ @media (min-width: 1200px) {
+   .project-card {
+     width: calc(33.333% - 2rem);
+   }
+ }
+
+    /* Base: phones */
   .projects-container {
-    margin: 30px 0 0 60px;
+    margin: 2rem 1rem;
   }
   .projects-container hr {
     border: 1px solid lightgray;
     width: 75%;
     margin-left: 5cm;
   }
+
   .project-card {
-    margin: 0 15px 15px 30px;
-    padding-bottom: 5px;
+    width: 100%;
   }
   .project-card h3,
   .project-card li {
@@ -169,6 +256,7 @@ body {
   }
   
   /* Scroll to Top Button */
+  
   .iconbutton {
     width: 48px;
     height: 48px;
@@ -209,7 +297,7 @@ body {
     font-size: 20px;
     cursor: pointer;
   }
-  .popup button:hover {
+  .popup button: hover {
     border: 2px solid #7600bc;
     font-weight: bolder;
   }
@@ -242,8 +330,9 @@ body {
     font-size: 20px;
     cursor: pointer;
   }
-  button:hover {
+  button: hover {
     background-color: #7600bc;
     color: #fff;
   }
   
+ 
