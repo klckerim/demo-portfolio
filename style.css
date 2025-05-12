@@ -297,7 +297,7 @@ body {
     font-size: 20px;
     cursor: pointer;
   }
-  .popup button: hover {
+  .popup button:hover {
     border: 2px solid #7600bc;
     font-weight: bolder;
   }
@@ -330,9 +330,94 @@ body {
     font-size: 20px;
     cursor: pointer;
   }
-  button: hover {
+  button:hover {
     background-color: #7600bc;
     color: #fff;
   }
   
- 
+ @media (max-width: 600px) {
+  nav > div#home {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topdiv {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding-top: 1rem;
+  }
+
+  .profile_name {
+    padding-left: 0;
+    font-size: 24px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .profile_image {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  #about-me h1 {
+    font-size: 32px;
+    margin-top: 20px;
+  }
+
+  #about-me p {
+    font-size: 18px;
+    margin: 1rem;
+  }
+}
+
+
+.skill {
+  flex: 1 1 calc(50% - 2rem);
+  width: auto;
+}
+
+@media (max-width: 600px) {
+  .skill {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+
+  .recommendation {
+    width: 100%;
+    max-width: 90%;
+    margin: 1rem auto;
+    font-size: 16px;
+  }
+
+  .all_recommendations {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  fieldset {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  textarea {
+    width: 100%;
+  }
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
