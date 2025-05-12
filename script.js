@@ -34,3 +34,8 @@ function showPopup(bool) {
     document.getElementById('popup').style.visibility = 'hidden'
   }
 }
+
+function menuToggleShow() {
+    document.querySelector(".topdiv").classList.toggle("show");
+}
+
