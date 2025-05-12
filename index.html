@@ -2,16 +2,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>AK - Portfolio</title>
     <link rel="stylesheet" href="./style.css"/>
-    <script src="./script.js"></script>
   </head>
   <body>
     <!-- Navigation Bar -->
     <nav>
       <div id="home">
         <div class="profile_name">
-          Abdulkerim Kılıç
+          Abdulkerim Kilic
           <div class="contact_info">
             <img src="html_finalprojimages/envelope.png" alt="Mail Icon"/>
             ak_klcabdulkerim@gmail.com
@@ -21,14 +22,21 @@
             <img src="html_finalprojimages/phone.png" alt="Phone Icon"/>
             +90 530 000 0000
           </div>
+          <div style="clear:both;"></div>
+        
         </div>
         <div class="topdiv">
+          
           <a class="topmenu" href="#about-me">About Me</a>
           <a class="topmenu" href="#skills">Skills</a>
           <a class="topmenu" href="#projects">Projects</a>
           <a class="topmenu" href="#recommendations">Recommendations</a>
         </div>
+       
       </div>    
+
+      <button id="menu-toggle" class="hamburger" onclick="menuToggleShow()">☰</button>
+
     </nav>
 
     <!-- About Me -->
@@ -169,5 +177,7 @@
       <h3>Thank you for your recommendation!</h3>
       <button onclick="showPopup(false)">Ok</button>
     </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
